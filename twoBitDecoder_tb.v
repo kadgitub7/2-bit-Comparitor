@@ -2,7 +2,7 @@
 
 module twoBitDecoder_tb();
     
-    reg[2:0] A,B;
+    reg[1:0] A,B;
     wire Aless,Aequal,Agreater;
     
     twoBitDecoder uut(A,B,Aless,Aequal,Agreater);
