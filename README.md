@@ -81,21 +81,21 @@ Using inputs **A₁**, **A₀**, **B₁**, **B₀**, and outputs **A<B**, **A=B*
 From this table, the Boolean equations for the outputs are derived using Karnaugh maps (K-maps):
 
 **A<B** (K-map groups: one group of 4, two groups of 2):  
-\[
-A<B = \overline{A_1} \cdot B_1 \mid \overline{A_1} \cdot \overline{A_0} \cdot B_0 \mid B_1 \cdot B_0 \cdot \overline{A_0}
-\]
+A<B = ¬A₁ · B₁ ∨ ¬A₁ · ¬A₀ · B₀ ∨ B₁ · B₀ · ¬A₀
 
 **A=B** (K-map groups: four groups of 1's):  
-\[
-A=B = (A_1 \odot B_1) \cdot (A_0 \odot B_0)
-\]
+A=B = (A₁ ⊙ B₁) · (A₀ ⊙ B₀)
 
 **A>B** (K-map groups: one group of 4, two groups of 2):  
-\[
-A>B = A_1 \cdot \overline{B_1} \mid A_0 \cdot \overline{B_1} \cdot \overline{B_0} \mid A_1 \cdot A_0 \cdot \overline{B_0}
-\]
+A>B = A₁ · ¬B₁ ∨ A₀ · ¬B₁ · ¬B₀ ∨ A₁ · A₀ · ¬B₀
 
 In more programming-style notation:
+
+```text
+A<B = ~A1 & B1 | ~A1 & ~A0 & B0 | B1 & B0 & ~A0
+A=B = (A1 ~^ B1) & (A0 ~^ B0)
+A>B = A1 & ~B1 | A0 & ~B1 & ~B0 | A1 & A0 & ~B0
+```
 
 ```text
 A<B = ~A1 & B1 | ~A1 & ~A0 & B0 | B1 & B0 & ~A0
