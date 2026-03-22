@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 
 module twoBitDecoder(
-    input A,
-    input B,
+    input[1:0] A,
+    input[1:0] B,
     output Aless,
     output Aequal,
     output Agreater
